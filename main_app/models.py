@@ -30,10 +30,12 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title}"
 
+    class Meta: 
+        ordering = ['-date']
 
+class Current_City(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    city_name = models.CharField(max_length=100)
 
-
-
-# Create your models here.
-
-
+    def __str__(self):
+        return f"{self.city_name}"
