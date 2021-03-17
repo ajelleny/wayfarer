@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 from django.urls import path
 from . import views 
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
 # from .forms import PostForm
+from .models import Post, Location
+
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def profile(request):
     return render(request, 'profile.html')
 
@@ -26,14 +30,23 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-# def posts_new(request):
-#   post_form = PostForm(request.POST or None)
-#   if request.POST and post_form.is_valid():
-#     new_post = post_form.save(commit=False)
-#     new_post.user = request.user
-#     new_post.save()
-#     # redirect to index
-#     return redirect('index')
-#   else:
-#     return render(request, 'posts/new.html', { 'post_form': post_form }) 
+@login_required
+def post_new(request):
+  post_form = PostForm(request.POST or None)
+  if request.POST and post_form.is_valid():
+    new_post = post_form.save(commit=False)
+    new_post.user = request.user
+    new_post.save()
+    # redirect to index
+    return redirect('index')
+  else:
+    return render(request, 'posts/new.html', { 'post_form': post_form }) 
 
+@login_required
+def add_post(request, post_id):
+    form = PostForm(request.POST)
+    if form.is_valid():
+        new_post = form.save(commit=False)
+        new_post.post_id = post_id
+        new_post.save()
+    return redirect('detail', post_id=post_id)
