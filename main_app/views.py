@@ -17,6 +17,7 @@ def home(request):
 @login_required
 def profile(request):
     return render(request, 'profile.html')
+    context = {'locations': locations}
 
 @login_required
 def posts_detail(request):
