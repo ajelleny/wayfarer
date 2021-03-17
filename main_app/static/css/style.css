@@ -37,3 +37,7 @@ span.card-title {
 .nav-wrapper {
     background-color: rgba(59, 140, 131);
 }
+
+.brand-logo {
+    margin-right: 20px;
+}
