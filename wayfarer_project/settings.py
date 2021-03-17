@@ -122,4 +122,4 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/'
-EDIT_PROFILE_URL = '/profile/'
+EDIT_REDIRECT_URL = '/profile/'
