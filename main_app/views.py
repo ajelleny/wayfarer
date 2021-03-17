@@ -12,10 +12,16 @@ from .forms import UsernameForm
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+  
 
 @login_required
 def profile(request):
     return render(request, 'profile.html')
+
+@login_required
+def posts_detail(request):
+  posts = post.objects.filter(user=request.user)
+  return render(request, 'detail.html', { 'posts': posts })
 
 def signup(request):
     error_message = ''
@@ -62,3 +68,4 @@ def profile_edit(request, user_id):
     return redirect('profile', user_id=user_id)
   else:
     return render(request, 'profile/edit.html', { 'user': user, 'username_form': username_form })
+
