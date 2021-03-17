@@ -9,6 +9,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('post/<int:post_id>/add_post/', views.add_post, name="add_post"),
     path('profile/<int:user_id>/edit/', views.profile_edit, name="edit"),
+    path('post/<int:post_id>/', views.posts_detail, name='detail'),
 
 ]
 
