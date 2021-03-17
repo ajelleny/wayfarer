@@ -1,5 +1,7 @@
 body {
-    color: red;
+    color: black;
+    background: url("https://wallpaperaccess.com/full/408006.jpg") no-repeat;
+    background-size: cover;
 }
 
 footer {
@@ -8,5 +10,30 @@ footer {
     display:flex;
     justify-content: center;
     width: 100vw;
-    color: 
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.card:hover {
+    box-shadow: 5px 2px black;
+    /* margin-bottom: 10px;   */
+}
+
+a {
+    color: black;
+}
+
+span.card-title {
+    color: black !important;
+
+}
+
+.page-footer {
+    background-color: rgba(59, 140, 131);
+}
+
+.nav-wrapper {
+    background-color: rgba(59, 140, 131);
 }
