@@ -5,7 +5,8 @@ from django.contrib.auth import login
 from django.urls import path
 from . import views 
 # from .forms import PostForm
-from .models import Post, Location
+from .models import Post, Location, User
+from .forms import UsernameForm
 
 
 # Create your views here.
@@ -50,3 +51,14 @@ def add_post(request, post_id):
         new_post.post_id = post_id
         new_post.save()
     return redirect('detail', post_id=post_id)
+
+@login_required
+def profile_edit(request, user_id):
+  user = User.objects.get(id=user_id)
+  username_form = UsernameForm(request.POST or None, instance=user)
+  if request.POST and username_form.is_valid():
+    username_form.save()
+    # redirect to the detail page
+    return redirect('profile', user_id=user_id)
+  else:
+    return render(request, 'profile/edit.html', { 'user': user, 'username_form': username_form })
