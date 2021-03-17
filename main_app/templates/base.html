@@ -21,7 +21,7 @@
         <ul class="right">
             <li><a href="{% url 'profile'%}" class="profile">&nbsp;&nbsp;Profile</a></li>
         {% if user.is_authenticated %}
-            <li><a href="{% url 'new' %}">Add Post</a></li>
+            {% comment %} <li><a href="{% url 'new' %}">Add Post</a></li> {% endcomment %}
             {% comment %} <li><a href="{% url 'index' %}">View all my Furniture</a></li> {% endcomment %}
             <li><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
