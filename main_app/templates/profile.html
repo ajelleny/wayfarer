@@ -25,9 +25,9 @@
         <table class="striped">
           <h1>Cities</h1>
           <tbody>
-          {% for city in location.all %}
+          {% for location in locations.all %}
             <tr>
-              <td>{{location.city}}</td>
+              <td>{{locations.city}}</td>
               {% comment %} <td>{{location.country}}</td> {% endcomment %}
             </tr>
           {% endfor %}
