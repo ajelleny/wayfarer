@@ -76,6 +76,8 @@ WSGI_APPLICATION = 'wayfarer_project.wsgi.application'
 
 DATABASES = {
     'default': {
+        'USERNAME': 'jacobrishe',
+        'PASSWORD': 'JakeR12he',
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'wayfarer',
     }
@@ -122,4 +124,3 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/'
-EDIT_REDIRECT_URL = '/profile/'

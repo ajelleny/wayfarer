@@ -21,7 +21,7 @@ def profile(request):
 
 @login_required
 def posts_detail(request, post_id):
-  posts = Post.objects.get(id=post_id)
+  posts = Post.objects.filter(id=post_id)
   return render(request, 'profile/detail.html', { 'posts': posts })
 
 def signup(request):
