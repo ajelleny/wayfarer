@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Welcome, {{ user.username }}! You are currently in {{ current_city.user.city_name }}</h1>
+<h1>Welcome, {{ user.username }}! You are currently in {{ current_city }}</h1>
 <p> You joined on {{ user.date_joined }}</p>
 
 {% comment %} <form action="{% url 'edit' profile.id%}" method="post">
@@ -27,7 +27,7 @@
           <tbody>
           {% for location in locations.all %}
             <tr>
-              <td>{{locations.city}}</td>
+              <td>{{location.city}}</td>
               {% comment %} <td>{{location.country}}</td> {% endcomment %}
             </tr>
           {% endfor %}
