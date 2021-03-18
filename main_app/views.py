@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.urls import path
-from . import views 
+from . import views
 # from .forms import PostForm
 from .models import Post, Location, User
 from .forms import UsernameForm
@@ -12,19 +12,17 @@ from .forms import UsernameForm
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
-  
+
 
 @login_required
 def profile(request):
     locations = Location.objects.all()
     return render(request, 'profile.html', { 'locations': locations })
 
-    
-
 @login_required
-def posts_detail(request):
-  posts = post.objects.filter(user=request.user)
-  return render(request, 'detail.html', { 'posts': posts })
+def posts_detail(request, post_id):
+  posts = Post.objects.get(id=post_id)
+  return render(request, 'profile/detail.html', { 'posts': posts })
 
 def signup(request):
     error_message = ''
@@ -50,7 +48,7 @@ def post_new(request):
     # redirect to index
     return redirect('index')
   else:
-    return render(request, 'posts/new.html', { 'post_form': post_form }) 
+    return render(request, 'posts/new.html', { 'post_form': post_form })
 
 @login_required
 def add_post(request, post_id):
@@ -68,7 +66,6 @@ def profile_edit(request, user_id):
   if request.POST and username_form.is_valid():
     username_form.save()
     # redirect to the detail page
-    return redirect('profile', user_id=user_id)
+    return redirect('profile')
   else:
-    return render(request, 'profile/edit.html', { 'user': user, 'username_form': username_form })
-
+    return render(request, 'profile/edit.html', { 'username_form': username_form, 'user_id': user_id })
