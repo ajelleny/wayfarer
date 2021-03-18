@@ -1,19 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Welcome to your Profile</h1>
+<h1>Welcome, {{ user.username }}! You are currently in {{ current_city.user.city_name }}</h1>
+<p> You joined on {{ user.date_joined }}</p>
+
+{% comment %} <form action="{% url 'edit' profile.id%}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn" >Edit profile</button>
+            </form> {% endcomment %}
+
+{% comment %} <button onclick="window.location.href='/page2'">Edit Profile</button> {% endcomment %}
+
+<form method="get" action="{% url 'edit' user.id %}">
+    <button class="btn" type="submit">Edit Profile</button>
+</form>
 
 <div class="row">
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ location.city }}</span>
+        {% comment %} <span class="card-title">{{ location.city }}</span>
+        {% if dog.toys.count %}
+        {% for toy in dog.toys.all %} {% endcomment %}
         <table class="striped">
           <h1>Cities</h1>
           <tbody>
-          {% for post in user.post_set.all %}
+          {% for location in locations.all %}
             <tr>
-              <td>{{post.locations}}</td>
+              <td>{{locations.city}}</td>
               {% comment %} <td>{{location.country}}</td> {% endcomment %}
             </tr>
           {% endfor %}
@@ -32,17 +46,22 @@
     </form> {% endcomment %}
     
     <table class="striped">
-      <thead>
-        <tr><th>Date</th><th>Title</th></tr>
-      </thead>
+     
       <tbody>
         {% for post in user.post_set.all %}
-          <tr>
-            <td>{{post.date}}</td>
-            <td>{{post.title}}</td>
-            <td>{{post.review}}</td>
-            {% comment %} <td>{{post.get_meal_display}}</td> {% endcomment %}
-          </tr>
+        <div class="card">
+        <a href="{% url 'detail' post.id %}">
+           <div class="card-content">
+              <span class="card-title">{{ post.date  }}</span>
+              <span class="card-title">{{ post.title  }}</span>
+              <span class="card-title">{{ post.review  }}</span>
+              {% comment %} <tr>
+                <td>{{post.date}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.review}}</td>
+            {% comment %} <td>{{post.get_meal_display}}</td> 
+              </tr> {% endcomment %}
+            </div>
         {% endfor %}
       </tbody>
     </table>

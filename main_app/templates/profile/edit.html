@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Edit Profile</h1>
+  <form method="POST" action="{% url 'edit' user.id %}">
+    {% csrf_token %}
+    {{ username_form.as_p }}
+    <input type="submit" class="btn" value="Update Profile"> 
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+{% endblock content %} 
+
+
+
+{% comment %} {% block content %}
+
+<h1>Edit Profile</h1>
+
+{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+
+<form method="post" action="{% url 'edit' user.id %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input for="id_city_name">Current City:</input> 
+  <br><br>
+  <input type="submit" class="btn" value="Update Profile">
+   
+</form>
+
+{% endblock %} {% endcomment %}
