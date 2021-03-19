@@ -6,28 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Wayfarer</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="{% url 'home'%}" class="left brand-logo ">&nbsp;&nbsp;WF</a></li>
-          <li><a href="{% url 'home'%}" class="left brand-logo">&nbsp;&nbsp;Wayfarer</a></li>
+          <li><a href="{% url 'home'%}" class="left brand-logo "><span class="wf-logo">&nbsp;&nbsp;WF</span></a></li>
+          <li><a href="{% url 'home'%}" class="site-name">&nbsp;&nbsp;Wayfarer</a></li>
         </ul>
         <ul class="right">
-            <li><a href="{% url 'profile'%}" class="profile">&nbsp;&nbsp;Profile</a></li>
         {% if user.is_authenticated %}
-            {% comment %} <li><a href="{% url 'new' %}">Add Post</a></li> {% endcomment %}
-            {% comment %} <li><a href="{% url 'index' %}">View all my Furniture</a></li> {% endcomment %}
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li><a href="{% url 'profile'%}" class="profile nav-links">&nbsp;&nbsp;Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="nav-links">Log Out</a></li>
         {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-              <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'signup' %}" class="nav-links">Sign Up</a></li>
+              <li><a href="{% url 'login' %}" class="nav-links">Log In</a></li>
         {% endif %}
         </ul>
       </div>

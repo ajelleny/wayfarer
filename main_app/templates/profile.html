@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Welcome, {{ user.username }}! You are currently in {{ user.current_city }}</h1>
+<h5>Welcome, {{ user.username }}! You are currently in {{ user.current_city }}</h5>
 <p> You joined on {{ user.date_joined }}</p>
 
 <form method="get" action="{% url 'edit' user.id %}">
-    <button class="btn" type="submit">Edit Profile</button>
+    <button class="btn edit-profile-btn" type="submit">Edit Profile</button>
 </form>
 
 <div class="row">
