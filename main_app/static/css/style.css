@@ -1,61 +1,49 @@
+:root {
+  --main-font-family: 'Philosopher', sans-serif;
+  --submain-font-family: 'Roboto', sans-serif;
+}
+
+
 body {
     color: black;
     width: 100%;
     height: auto;
-    background: url("https://wallpaperaccess.com/full/408006.jpg") no-repeat;
+    background-color: #000;
     background-size: cover;
+    font-family: var(--submain-font-family);
 }
 
-section {
+.section {
   width: 100%;
   height: 40vh;
+  text-align: center;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
+input {
+  color: #fff;
 }
 
-.steps {
-  width: 200px;
-  height: 250px;
-  background-color: #fff;
+.site-name {
+  margin-left: 50px;
+  font-size: 27px;
+  font-family: var(--main-font-family);
 }
 
-footer {
-    bottom: 0;
-    position: fixed;
-    display:flex;
-    justify-content: center;
-    width: 100vw;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.card:hover {
-    box-shadow: 5px 2px black;
-    /* margin-bottom: 10px;   */
-}
-
-a {
-    color: black;
-}
-
-span.card-title {
-    color: black !important;
-
-}
-
-.page-footer {
-    background-color: rgba(59, 140, 131);
-}
 
 .nav-wrapper {
-    background-color: rgba(59, 140, 131);
+    background-color: #000;
+}
+
+.nav-links {
+  font-size: 20px;
+  font-family: var(--main-font-family);
 }
 
 .brand-logo {
     margin-right: 20px;
+    font-family: var(--main-font-family);
+}
+
+.wf-logo {
+  color: #32B692;
 }
