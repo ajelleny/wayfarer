@@ -22,8 +22,8 @@
           <li><a href="{% url 'home'%}" class="site-name">&nbsp;&nbsp;Wayfarer</a></li>
         </ul>
         <ul class="right">
-            <li><a href="{% url 'profile'%}" class="profile nav-links">&nbsp;&nbsp;Profile</a></li>
         {% if user.is_authenticated %}
+            <li><a href="{% url 'profile'%}" class="profile nav-links">&nbsp;&nbsp;Profile</a></li>
             <li><a href="{% url 'logout' %}" class="nav-links">Log Out</a></li>
         {% else %}
             <li><a href="{% url 'signup' %}" class="nav-links">Sign Up</a></li>
