@@ -121,8 +121,12 @@ p {
 }
 
 table.striped>tbody>tr:nth-child(odd){
-  background-color: #fff;
+  background-color: grey;
   color: #fff;
+}
+
+tr {
+  color: white;
 }
 
 a {
