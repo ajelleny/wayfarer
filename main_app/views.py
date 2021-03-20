@@ -5,13 +5,16 @@ from django.contrib.auth import login
 from django.urls import path
 from . import views
 # from .forms import PostForm
-from .models import Post, Location, User
+from .models import Post, Location, User, Current_City
 from .forms import UsernameForm
 
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 
 @login_required
@@ -68,4 +71,4 @@ def profile_edit(request, user_id):
     # redirect to the detail page
     return redirect('profile')
   else:
-    return render(request, 'profile/edit.html', { 'username_form': username_form, 'user_id': user_id })
+    return render(request, 'profile/edit.html', { 'username_form': username_form, 'user_id': user_id})
