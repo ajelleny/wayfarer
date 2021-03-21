@@ -3,7 +3,6 @@
   --submain-font-family: 'Roboto', sans-serif;
 }
 
-html,
 body {
     font-family: var(--submain-font-family);
     background-image: url('../images/home-background.jpg');
@@ -56,7 +55,7 @@ input {
   margin-left: -100px;
 }
 
-.about-container {
+.home-about-container {
   text-align: left;
   margin-left: -5vw;
   margin-top: 70px;
@@ -68,6 +67,15 @@ input {
   width: 100%;
   margin-top: 50px;
   margin-left: -95px;
+}
+
+@media only screen and (max-width: 480px) {
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 50px;
+  }
 }
 
 .steps {
@@ -86,6 +94,11 @@ input {
   font-family: var(--main-font-family);
 }
 
+.step-p {
+  font-size: 12px;
+  padding: 15px;
+}
+
 h1, h3, h5, p {
   color: #fff;
   letter-spacing: 2px;
@@ -98,18 +111,61 @@ h1 {
 p {
   font-size: 20px;
 }
+
+@media only screen and (max-width: 480px) {
+  body {
+    height: 100vh;
+    margin-bottom: 725px
+  }
+
+  .home-about-container {
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 55px;
+    width: 100vw;
+    padding: 0px 20px 0px 20px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  .steps {
+    margin-bottom: 0px;
+  }
+
+}
 /* --------------------about page------------------------- */
-.about-container {
+.aboutpage-section {
+  width: 100%;
+  text-align: center;
+  margin-left: -100px;
+  margin-bottom: 400px;
+}
+
+
+.h1-container, .aboutpage-container {
 width: 500px;
 height: 40vh;
 text-align: center;
 margin-left: -100px;
 }
 
+
 .jelleny-container, .jacob-container {
   border: 3px solid white;
   display: flex;
   flex-direction: row;
+  width: 700px;
 }
 
 .jelleny-container {
@@ -118,6 +174,10 @@ margin-left: -100px;
 
 .jelleny-desc {
   align-items: right;
+}
+
+.about-name {
+  font-family: var(--main-font-family);
 }
 
 /* ------------------profile page------------------------- */
