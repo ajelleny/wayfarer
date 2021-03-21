@@ -65,8 +65,12 @@ input {
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 50px;
   margin-left: -95px;
+}
+
+.how-div {
+  margin-left: -80px;
+  text-align: left;
 }
 
 @media only screen and (max-width: 480px) {
@@ -79,13 +83,13 @@ input {
 }
 
 .steps {
-  width: 100%;
+  width: 100vw;
   height: 250px;
   -webkit-box-shadow: 0px 0px 10px 3px #32B692;
   -moz-box-shadow: 0px 0px 10px 3px #32B692;
   box-shadow: 0px 5px 30px 3px #32B692;
   flex-grow: 1;
-  margin-left: 50px;
+  margin-left: 70px;
   margin-bottom: 150px;
   margin-top: 50px;
 }
@@ -121,9 +125,17 @@ p {
   .home-about-container {
     text-align: center;
     margin-top: 70px;
-    margin-left: 55px;
+    margin-left: 85px;
     width: 100vw;
     padding: 0px 20px 0px 20px;
+  }
+
+  .how-div {
+    width: 100vw;
+  }
+
+  .how-div h1 {
+    text-align: center;
   }
 
   h1 {
@@ -141,8 +153,8 @@ p {
 
   .steps {
     margin-bottom: 0px;
+    width: 75vw;
   }
-
 }
 /* --------------------about page------------------------- */
 .aboutpage-section {
@@ -152,14 +164,12 @@ p {
   margin-bottom: 400px;
 }
 
-
 .h1-container, .aboutpage-container {
 width: 500px;
 height: 40vh;
 text-align: center;
 margin-left: -100px;
 }
-
 
 .jelleny-container, .jacob-container {
   border: 3px solid white;
@@ -170,6 +180,7 @@ margin-left: -100px;
 
 .jelleny-container {
   margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .jelleny-desc {
@@ -178,6 +189,37 @@ margin-left: -100px;
 
 .about-name {
   font-family: var(--main-font-family);
+}
+
+@media only screen and (max-width: 480px) {
+  .h1-container {
+    height: 100px;
+    margin-left: -4px;
+  }
+  .jelleny-container {
+    width: 30vw;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 290px;
+    border: none;
+
+  }
+  .jelleny-desc {
+    width: 80vw;
+  }
+  .jacob-container {
+    margin-top: 50px;
+  }
+  .jacob-container {
+    width: 30vw;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 290px;
+    border: none;
+  }
+  .jacob-desc {
+    width: 80vw;
+  }
 }
 
 /* ------------------profile page------------------------- */
@@ -244,6 +286,23 @@ a {
   color: black;
 }
 
+@media only screen and (max-width: 480px) {
+  .profile-container {
+    text-align: center;
+    padding-top: 50px;
+    margin: auto;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    margin-left: -275px;
+  }
+
+  .card-content {
+    margin-bottom: 50px;
+  }
+}
 /* -----------------signup page----------------------- */
 li {
   color: #fff;
@@ -266,7 +325,11 @@ label {
   margin-bottom: 100px;
 }
 
-
+@media only screen and (max-width: 480px) {
+  .login-container {
+    width: 100px;
+  }
+}
 /* ------------------------footer----------------------- */
 footer {
     bottom: 0;
