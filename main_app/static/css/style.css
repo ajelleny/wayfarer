@@ -3,11 +3,14 @@
   --submain-font-family: 'Roboto', sans-serif;
 }
 
+html,
 body {
     font-family: var(--submain-font-family);
     background-image: url('../images/home-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 
 .section {
@@ -45,34 +48,37 @@ input {
 }
 
 /* --------------------home page-------------------------- */
-.home-container {
-  display: flex;
-  flex-direction: row;
-  width: auto;
-  margin-top: 100px;
-}
-
 .home-section {
   width: 100%;
   height: 40vh;
   text-align: center;
+  margin-left: -100px;
 }
 
 .about-container {
   text-align: left;
-  margin-left: -150px;
+  margin-left: -5vw;
+  margin-top: 70px;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   margin-top: 50px;
+  margin-left: -95px;
 }
 
 .steps {
-  width: 200px;
+  width: 100%;
   height: 250px;
   -webkit-box-shadow: 0px 0px 10px 3px #32B692;
   -moz-box-shadow: 0px 0px 10px 3px #32B692;
-  box-shadow: 0px 0px 10px 3px #32B692;
+  box-shadow: 0px 5px 30px 3px #32B692;
   flex-grow: 1;
-  margin-left: 35px;
-  margin-top: 25vh;
+  margin-left: 50px;
+  margin-bottom: 150px;
+  margin-top: 50px;
 }
 
 .steps h3 {
@@ -93,13 +99,17 @@ p {
 }
 
 /* ------------------profile page------------------------- */
+.profile-container {
+  margin-left: -5vw;
+}
+
 .card {
     background-color: #000;
     -webkit-box-shadow: 0px 0px 10px 3px #fff;
     -moz-box-shadow: 0px 0px 10px 3px #fff;
     box-shadow: 0px 0px 10px 3px #fff;
-    margin-bottom: 20px;
 }
+
 
 .card:hover {
   -webkit-box-shadow: 0px 0px 10px 3px #32B692;
@@ -107,17 +117,32 @@ p {
   box-shadow: 0px 0px 10px 3px #32B692;
 }
 
+.card-date {
+  color: grey;
+}
+
 .card-title {
   color: #fff;
+  font-family: var(--main-font-family);
+}
+
+.card-review {
+  color: #fff;
+  font-family: var(--submain-font-family);
+  font-size: 15px;
 }
 
 .row {
   margin-top: 20px;
 }
 
-.edit-profile-btn {
-  margin-left: 86%;
-  margin-top: -10%;
+.username {
+  font-family: var(--main-font-family);
+  font-size: 35px;
+}
+
+.date-joined {
+  font-size: 15px;
 }
 
 table.striped>tbody>tr:nth-child(odd){
@@ -129,10 +154,22 @@ tr {
   color: white;
 }
 
+td {
+  font-family: var(--submain-font-family);
+}
+
 a {
   color: black;
 }
 
+/* -----------------login page----------------------- */
+li {
+  color: #fff;
+}
+
+
+
+/* ------------------------footer----------------------- */
 footer {
     bottom: 0;
     position: fixed;
