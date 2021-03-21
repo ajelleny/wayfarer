@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div class="login-container">
 <h1>Log In</h1>
 <!-- Add the login form -->
 <form style="width: 500px" method="post" action="{% url 'login' %}">
@@ -10,4 +11,5 @@
   <input type="submit" class="btn" value="login">
   <input type="hidden" name="next" value="{{ next }}">
 </form>
+</div>
 {% endblock %}
