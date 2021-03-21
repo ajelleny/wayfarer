@@ -98,6 +98,27 @@ h1 {
 p {
   font-size: 20px;
 }
+/* --------------------about page------------------------- */
+.about-container {
+width: 500px;
+height: 40vh;
+text-align: center;
+margin-left: -100px;
+}
+
+.jelleny-container, .jacob-container {
+  border: 3px solid white;
+  display: flex;
+  flex-direction: row;
+}
+
+.jelleny-container {
+  margin-bottom: 50px;
+}
+
+.jelleny-desc {
+  align-items: right;
+}
 
 /* ------------------profile page------------------------- */
 .profile-container {
