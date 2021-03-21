@@ -11,6 +11,7 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    margin-bottom: 300px;
 }
 
 .section {
@@ -162,11 +163,27 @@ a {
   color: black;
 }
 
-/* -----------------login page----------------------- */
+/* -----------------signup page----------------------- */
 li {
   color: #fff;
 }
 
+.helptext {
+  font-size: 13px;
+}
+
+.current-city {
+  font-size: 15px;
+  color: #9e9e9e;
+}
+
+label {
+  font-size: 15px;
+}
+
+.signup form {
+  margin-bottom: 100px;
+}
 
 
 /* ------------------------footer----------------------- */
