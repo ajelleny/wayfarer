@@ -8,6 +8,18 @@ body {
     background-image: url('../images/home-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    background-image: none;
+    background-color: #000;
+  }
 }
 
 .section {
@@ -45,38 +57,59 @@ input {
 }
 
 /* --------------------home page-------------------------- */
-.home-container {
-  display: flex;
-  flex-direction: row;
-  width: auto;
-  margin-top: 100px;
-}
-
 .home-section {
   width: 100%;
   height: 40vh;
   text-align: center;
+  margin-left: -100px;
 }
 
-.about-container {
+.home-about-container {
   text-align: left;
-  margin-left: -150px;
-  margin-top: 50px;
+  margin-left: -5vw;
+  margin-top: 70px;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: -95px;
+}
+
+.how-div {
+  margin-left: -80px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 480px) {
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: -45px;
+  }
 }
 
 .steps {
-  width: 200px;
+  width: 100vw;
   height: 250px;
   -webkit-box-shadow: 0px 0px 10px 3px #32B692;
   -moz-box-shadow: 0px 0px 10px 3px #32B692;
-  box-shadow: 0px 0px 10px 3px #32B692;
+  box-shadow: 0px 5px 30px 3px #32B692;
   flex-grow: 1;
-  margin-left: 35px;
-  margin-top: 25vh;
+  margin-left: 70px;
+  margin-bottom: 150px;
+  margin-top: 50px;
 }
 
 .steps h3 {
   font-family: var(--main-font-family);
+}
+
+.step-p {
+  font-size: 12px;
+  padding: 15px;
 }
 
 h1, h3, h5, p {
@@ -92,14 +125,150 @@ p {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 480px) {
+  body {
+    height: 100vh;
+    margin-bottom: 800px
+  }
+
+  .site-name {
+    margin-left: 0;
+    font-size: 0;
+    color:
+  }
+
+  h5 {
+    font-size: 21px;
+  }
+
+  .home-about-container {
+    text-align: center;
+    margin-top: 70px;
+    width: 100vw;
+    padding: 0px 20px 0px 20px;
+  }
+
+.home-section {
+  margin-left: auto;
+}
+
+  .how-div {
+    width: 100vw;
+  }
+
+  .how-div h1 {
+    text-align: center;
+    margin-left: 95px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .container {
+    padding: 25px;
+    width: 100%;
+  }
+
+  .steps {
+    margin-bottom: 0px;
+    width: 75vw;
+  }
+}
+/* --------------------about page------------------------- */
+.aboutpage-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 400px;
+}
+
+.h1-container, .aboutpage-container {
+width: 100%;
+height: 40vh;
+text-align: center;
+}
+
+.h1-about {
+  text-align: left;
+  border-bottom: 2px solid #fff;
+  width: 475px;
+  padding-bottom: 50px;
+}
+
+.jelleny-container, .jacob-container {
+  border: 3px solid white;
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+}
+
+.jelleny-container {
+  margin-bottom: 70px;
+}
+
+.jelleny-desc, .jacob-desc {
+  align-items: right;
+    padding: 0 25px 0 25px;
+}
+
+.about-name {
+  font-family: var(--main-font-family);
+}
+
+@media only screen and (max-width: 480px) {
+  .h1-container {
+    height: 100px;
+    margin-left: -4px;
+  }
+
+  .h1-about {
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    padding-bottom: 50px;
+  }
+
+  .jelleny-container {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+
+  }
+  .jelleny-desc {
+    width: 80vw;
+  }
+  .jacob-container {
+    margin-top: 50px;
+  }
+  .jacob-container {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+  }
+  .jacob-desc {
+    width: 80vw;
+  }
+}
+
 /* ------------------profile page------------------------- */
+.profile-container {
+  margin-left: -5vw;
+}
+
 .card {
     background-color: #000;
     -webkit-box-shadow: 0px 0px 10px 3px #fff;
     -moz-box-shadow: 0px 0px 10px 3px #fff;
     box-shadow: 0px 0px 10px 3px #fff;
-    margin-bottom: 20px;
 }
+
 
 .card:hover {
   -webkit-box-shadow: 0px 0px 10px 3px #32B692;
@@ -107,28 +276,145 @@ p {
   box-shadow: 0px 0px 10px 3px #32B692;
 }
 
+.card-date {
+  color: grey;
+}
+
 .card-title {
   color: #fff;
+  font-family: var(--main-font-family);
+}
+
+.card-review {
+  color: #fff;
+  font-family: var(--submain-font-family);
+  font-size: 15px;
 }
 
 .row {
   margin-top: 20px;
 }
 
-.edit-profile-btn {
-  margin-left: 86%;
-  margin-top: -10%;
+.username {
+  font-family: var(--main-font-family);
+  font-size: 35px;
 }
 
-table.striped>tbody>tr:nth-child(odd){
-  background-color: #fff;
+.date-joined {
+  font-size: 15px;
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+  background-color: grey;
   color: #fff;
+}
+
+tr {
+  color: white;
+}
+
+td {
+  font-family: var(--submain-font-family);
 }
 
 a {
   color: black;
 }
 
+@media only screen and (max-width: 480px) {
+  .profile-container {
+    text-align: center;
+    margin: auto;
+  }
+
+  .card .card-title {
+    font-size: 20px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .row .col.s6 {
+    width: 100%;
+  }
+
+  .card-content {
+    margin-bottom: 50px;
+  }
+
+  .date-joined {
+    font-size: 12px;
+  }
+}
+/* -----------------signup page----------------------- */
+li {
+  color: #fff;
+}
+
+.helptext {
+  font-size: 13px;
+}
+
+.current-city {
+  font-size: 15px;
+  color: #9e9e9e;
+}
+
+label {
+  font-size: 15px;
+}
+
+.signup-form {
+  width: 524px;
+}
+
+@media only screen and (max-width: 480px) {
+  .login-container {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+.signup-form {
+  width: 300px;
+  }
+.signup-form p {
+  text-align: left;
+  }
+}
+
+/* -----------------------------login page-------------- */
+.login-form {
+  width: 500px;
+}
+
+@media only screen and (max-width: 480px) {
+.login-form {
+  width: 300px;
+  }
+.login-form p {
+  text-align: left;
+  }
+}
+
+/* ------------------edit page-------------------------- */
+.edit-form {
+    width: 524px;
+}
+
+@media only screen and (max-width: 480px) {
+.edit-form {
+  width: 300px;
+  }
+.edit-form p {
+  text-align: left;
+  }
+}
+
+/* ------------------------footer----------------------- */
 footer {
     bottom: 0;
     position: fixed;
