@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-  <section class="home-section">
-  <div class="about-container">
+  <section class="aboutpage-section">
+  <div class="h1-container">
     <h1>About Our Team</h1>
   </div>
-  <div class="home-container">
-    <div class="steps">
-      <img src="../images/home-background.jpg" alt="image of team">
-      <h3>Jelleny</h3>
-        <p>Description</p>
+  <div class="aboutpage-container">
+    <div class="jelleny-container">
+      <div>
+        <img src="../static/images/jelleny.JPG" alt="image of team">
+      </div>
+      <div class="jelleny-desc">
+        <h3 class="about-name">Jelleny</h3>
+        <p>Software engineering enthusiast focused on back-end development.</p>
+      </div>
     </div>
-    <div class="steps">
-      <img src="../images/home-background.jpg" alt="image of team">
-      <h3>Jacob</h3>
-        <p>Description </p>
+    <div class="jacob-container">
+      <div>
+        <img src="../static/images/jacob.JPG" alt="image of team">
+      </div>
+      <div class="jacob-desc">
+        <h3 class="about-name">Jacob</h3>
+        <p>I'm a Software Engineer focused on front-end development. </p>
+      </div>
     </div>
   </div>
-</section>
+  <section>
 {% endblock %}
