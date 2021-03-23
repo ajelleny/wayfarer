@@ -5,7 +5,7 @@
 
 {% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
 
-<form class="signup-form" style="width: 500px" method="post" action="{% url 'signup' %}">
+<form class="signup-form" method="post" action="{% url 'signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
   <input for="id_city_name"><span class="current-city">Current City:</span>
