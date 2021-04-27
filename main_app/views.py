@@ -54,15 +54,6 @@ def post_new(request):
     return render(request, 'posts/new.html', { 'post_form': post_form })
 
 @login_required
-def add_post(request, post_id):
-    form = PostForm(request.POST)
-    if form.is_valid():
-        new_post = form.save(commit=False)
-        new_post.post_id = post_id
-        new_post.save()
-    return redirect('detail', post_id=post_id)
-
-@login_required
 def profile_edit(request, user_id):
   user = User.objects.get(id=user_id)
   username_form = UsernameForm(request.POST or None, instance=user)
